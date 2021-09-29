@@ -70,5 +70,38 @@ class RestaurantTest {
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+    //test cases added to count the total order value
+    @Test
+    public void adding_all_items_bill_should_show_total_Order_Value(){
+
+        itemNameList.add("Sizzling brownie");
+        itemNameList.add("Sizzling");
+        itemNameList.add("brownie1");
+
+        restaurant.addToMenu("Sizzling brownie",319);
+        restaurant.addToMenu("brownie",519);
+        restaurant.addToMenu("Sizzling",219);
+        restaurant.addToMenu("Sizzl",119);
+        restaurant.addToMenu("brownie1",419);
+
+        assertEquals(957,restaurant.totalOrderValue(itemNameList));
+    }
+
+    @Test
+    public void adding_all_items_bill_should_not_match_total_Order_Value(){
+        //adding values in menu item arraylist
+        itemNameList.add("Sizzling brownie");
+        itemNameList.add("Sizzling");
+        itemNameList.add("brownie1");
+
+        restaurant.addToMenu("Sizzling brownie",319);
+        restaurant.addToMenu("brownie",519);
+        restaurant.addToMenu("Sizzling",219);
+        restaurant.addToMenu("Sizzl",119);
+        restaurant.addToMenu("brownie1",419);
+
+        assertNotEquals(800,restaurant.totalOrderValue(itemNameList));
+    }
+
 
 }

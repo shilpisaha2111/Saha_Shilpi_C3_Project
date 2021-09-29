@@ -69,5 +69,13 @@ public class Restaurant {
         return name;
     }
 
-
+    // assignment part 3 - method to get price of each item from the Item class
+    public int totalOrderValue(List<String> itemNameList){
+        int orderTotal = 0;
+        /*for(String itemName: itemNameList) {
+            Item item_Name = findItemByName(itemName);
+            orderTotal += item_Name.getPrice();
+        }*/
+        return orderTotal;
+    }
 }
